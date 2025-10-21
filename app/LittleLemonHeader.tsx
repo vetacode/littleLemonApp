@@ -9,7 +9,7 @@ export default function LittleLemonHeader() {
         backgroundColor: '#F4CE14',
       }}
     >
-      <Text style={{padding: 60, fontSize: 30, fontWeight: '600', color: 'black'
+      <Text style={{padding: 40, fontSize: 30, fontWeight: '600', color: 'black', textAlign: 'center',
       }}>Welcome to Little Lemon</Text>
     </View>
   );
