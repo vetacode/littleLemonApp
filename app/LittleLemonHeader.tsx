@@ -6,10 +6,10 @@ export default function LittleLemonHeader() {
     <View
       style={{
         flex: 0.2,
-                backgroundColor: '#F4CE14',
+        backgroundColor: '#F4CE14',
       }}
     >
-      <Text style={{padding: 40, fontSize: 30, color: 'black'
+      <Text style={{padding: 60, fontSize: 30, fontWeight: '600', color: 'black'
       }}>Welcome to Little Lemon</Text>
     </View>
   );
