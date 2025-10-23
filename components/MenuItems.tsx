@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 const green = '#495E57';
 const yellow = '#F4CE14';
@@ -7,7 +7,12 @@ const salmon = '#EE9972';
 const black = '#333333';
 const white = '#EDEFEE';
 
-const menuItemsToDisplay = [
+type MenuItem = {
+  id: string;
+  name: string;
+};
+
+const menuItemsToDisplay: MenuItem[] = [
   { name: 'Hummus', id: '1A' },
   { name: 'Moutabal', id: '2B' },
   { name: 'Falafel', id: '3C' },
@@ -32,38 +37,45 @@ const menuItemsToDisplay = [
   { name: 'Panna Cotta', id: '22W' },
 ];
 
-const Item = ({ name }) => (
+type ItemProps = {
+  name: string;
+};
+
+const Item = ({ name }: ItemProps) => (
   <View style={menuStyles.innerContainer}>
     <Text style={menuStyles.itemText}>{name}</Text>
   </View>
 );
 
 export default function MenuItems() {
-  const renderItem = ({ item }) => <Item name={item.name} />;
+  type renderItemProps = {
+    item: MenuItem;
+  };
+  const renderItem = ({ item }: renderItemProps) => <Item name={item.name} />;
 
   return (
     <View style={menuStyles.container}>
-      <ScrollView
+      {/* <ScrollView
         minimumZoomScale={1}
         maximumZoomScale={2}
         bouncesZoom={true}
         horizontal={false}
         style={menuStyles.innerContainer}
-      >
-        <Text style={menuStyles.headerText}>View Menu</Text>
-        <FlatList
-          data={menuItemsToDisplay}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-        ></FlatList>
-      </ScrollView>
+      > */}
+      <Text style={menuStyles.headerText}>View Menu</Text>
+      <FlatList
+        data={menuItemsToDisplay}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+      ></FlatList>
+      {/* </ScrollView> */}
     </View>
   );
 }
 
 const menuStyles = StyleSheet.create({
   container: {
-    flex: 0.75,
+    flex: 1,
   },
   innerContainer: {
     padding: 40,
