@@ -75,20 +75,21 @@ export default function MenuItems() {
 
 const menuStyles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.75,
   },
   innerContainer: {
-    padding: 40,
-    backgroundColor: green,
+    backgroundColor: black,
     paddingHorizontal: 40,
     paddingVertical: 20,
   },
   headerText: {
-    color: 'white',
-    fontSize: 40,
+    color: 'black',
+    fontSize: 30,
     flexWrap: 'wrap',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    paddingVertical: 10,
     textAlign: 'center',
+    backgroundColor: salmon,
   },
-  itemText: { color: yellow, fontSize: 36 },
+  itemText: { color: salmon, fontSize: 30 },
 });
